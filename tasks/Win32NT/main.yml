@@ -1,0 +1,5 @@
+---
+- name: Install java packages
+  win_chocolatey:
+    name: "{{ java_package }}"
+    state: present
