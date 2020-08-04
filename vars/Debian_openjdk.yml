@@ -1,0 +1,2 @@
+---
+java_package: "openjdk-{{ java_major_version }}-{{ java_type }}"

@@ -1,0 +1,20 @@
+---
+- name: Add apt-key for AdoptOpenJDK
+  apt_key:
+    url: https://adoptopenjdk.jfrog.io/adoptopenjdk/api/gpg/key/public
+    state: present
+  become: true
+
+- name: Add repository for AdoptOpenJDK
+  apt_repository:
+    repo: "{{ java_adoptopenjdk_apt_repository }}"
+    filename: adoptopenjdk
+    state: present
+    update_cache: true
+  become: true
+
+- name: Install java packages
+  apt:
+    name: "{{ java_package }}"
+    state: present
+  become: true

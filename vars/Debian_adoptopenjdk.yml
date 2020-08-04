@@ -1,0 +1,2 @@
+---
+java_package: "adoptopenjdk-{{ java_major_version }}-{{ java_adoptopenjdk_impl }}-{{ (java_type == 'jre') | ternary('-' + java_type, '') }}"
